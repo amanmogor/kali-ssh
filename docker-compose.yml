@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  kali:
+    build: .
+    image: kali-ssh-cli:latest
+    container_name: kali-ssh
+    ports:
+      - "8822:22"
+    volumes:
+      - kali_data:/home/kaliuser/workspace
+    restart: unless-stopped
+
+volumes:
+  kali_data:
